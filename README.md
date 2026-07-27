@@ -75,9 +75,7 @@ CNN for Image Classification
 
 ---
 
-<p align="center">
-  <img src="outputs/plots/02_class_balance.png" alt="Class Balance" width="800">
-</p>
+![Accuracy Graph](outputs/plots/02_class_balance.png)
 # Technologies Used
 
 - Python
