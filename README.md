@@ -75,7 +75,7 @@ CNN for Image Classification
 
 ---
 
-![Accuracy Graph](outputs/plots/02_class_balance.png)
+![Accuracy Graph](02_class_balance.png)
 # Technologies Used
 
 - Python
