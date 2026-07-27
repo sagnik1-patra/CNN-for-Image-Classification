@@ -1,0 +1,11 @@
+class_index,class_name,correct_predictions,total_images,accuracy,accuracy_percentage
+0,airplane,933,1000,0.933,93.30000000000001
+1,automobile,976,1000,0.976,97.6
+2,bird,874,1000,0.874,87.4
+3,cat,772,1000,0.772,77.2
+4,deer,894,1000,0.894,89.4
+5,dog,861,1000,0.861,86.1
+6,frog,983,1000,0.983,98.3
+7,horse,953,1000,0.953,95.3
+8,ship,955,1000,0.955,95.5
+9,truck,950,1000,0.95,95.0

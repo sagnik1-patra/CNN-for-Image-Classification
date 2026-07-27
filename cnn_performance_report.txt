@@ -1,0 +1,89 @@
+CNN FOR CIFAR-10 IMAGE CLASSIFICATION
+===========================================================================
+
+1. DATASET
+---------------------------------------------------------------------------
+CIFAR-10 contains 60,000 RGB images of size 32x32 divided into 10 balanced classes. The training set contains 50,000 images and the test set contains 10,000 images. A validation subset is created from the original training set.
+
+2. PREPROCESSING
+---------------------------------------------------------------------------
+Pixel values are normalized to the range 0-1. Labels are converted to one-hot vectors. Training images are augmented with horizontal flips, rotations, shape-preserving translations, and contrast changes.
+
+3. ARCHITECTURES
+---------------------------------------------------------------------------
+The baseline CNN uses two convolution and pooling stages followed by a dense layer and dropout. The advanced model uses residual blocks, batch normalization, dropout, and L2 regularization. MobileNetV2 is used for transfer learning.
+
+4. PARAMETER COUNTS
+---------------------------------------------------------------------------
+baseline_cnn: 545,098
+advanced_residual_cnn: 2,848,970
+mobilenetv2_transfer: 2,593,610
+
+5. RESULTS
+---------------------------------------------------------------------------
+               model_name  test_accuracy  weighted_precision  weighted_recall  weighted_f1_score  training_seconds  epochs_completed  best_validation_accuracy
+advanced_residual_cnn_tta         0.9218            0.922101           0.9218           0.921179               NaN               NaN                       NaN
+    advanced_residual_cnn         0.9176            0.917887           0.9176           0.916954      30091.383937              60.0                    0.9210
+     three_model_ensemble         0.9151            0.916114           0.9151           0.914392               NaN               NaN                       NaN
+     mobilenetv2_transfer         0.8538            0.855318           0.8538           0.852331       2699.084405              20.0                    0.8598
+             baseline_cnn         0.7384            0.741928           0.7384           0.731226       1004.294615              50.0                    0.7326
+
+Best experiment: advanced_residual_cnn_tta
+Best test accuracy: 92.18%
+
+6. ERROR ANALYSIS
+---------------------------------------------------------------------------
+
+Top errors for baseline_cnn:
+true_class predicted_as  confusion_count
+      bird         frog              168
+       cat          dog              167
+      deer         frog              160
+       cat         frog              143
+       dog          cat              113
+
+Top errors for advanced_residual_cnn:
+true_class predicted_as  confusion_count
+       cat          dog               74
+       dog          cat               70
+       cat         frog               55
+       cat         deer               33
+     horse         deer               30
+
+Top errors for mobilenetv2_transfer:
+true_class predicted_as  confusion_count
+       cat          dog              102
+       dog          cat              100
+       cat         frog               94
+      deer        horse               94
+      deer         frog               68
+
+Top errors for advanced_residual_cnn_tta:
+true_class predicted_as  confusion_count
+       cat          dog               71
+       dog          cat               66
+       cat         frog               52
+       cat         deer               30
+      bird         frog               30
+
+Top errors for three_model_ensemble:
+true_class predicted_as  confusion_count
+       cat          dog               76
+       cat         frog               65
+       dog          cat               65
+      deer         frog               49
+      bird         frog               46
+
+7. OBSERVATIONS
+---------------------------------------------------------------------------
+Data augmentation improves generalization by adding realistic variation. Batch normalization stabilizes activation distributions and often speeds convergence. Dropout reduces overfitting by randomly disabling activations during training. Residual connections improve gradient flow and make deeper networks easier to train. Learning-rate reduction helps the optimizer make smaller updates near a minimum. Transfer learning reuses features learned from ImageNet. Ensembling can improve accuracy when models make different errors.
+
+8. POSSIBLE IMPROVEMENTS
+---------------------------------------------------------------------------
+1. Fine-tune the last MobileNetV2 layers.
+2. Use MixUp or CutMix augmentation.
+3. Apply label smoothing.
+4. Use cosine learning-rate scheduling.
+5. Train longer on a GPU.
+6. Tune dropout and L2 strength.
+7. Use weighted ensemble averaging.

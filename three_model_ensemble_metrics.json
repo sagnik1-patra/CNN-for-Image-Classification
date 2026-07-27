@@ -1,0 +1,9 @@
+{
+    "model_name": "three_model_ensemble",
+    "test_accuracy": 0.9151,
+    "weighted_precision": 0.9161138116648202,
+    "weighted_recall": 0.9151,
+    "weighted_f1_score": 0.9143921889653213,
+    "correct_predictions": 9151,
+    "incorrect_predictions": 849
+}

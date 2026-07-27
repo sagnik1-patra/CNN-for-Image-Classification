@@ -1,0 +1,9 @@
+{
+    "model_name": "advanced_residual_cnn_tta",
+    "test_accuracy": 0.9218,
+    "weighted_precision": 0.9221014562570901,
+    "weighted_recall": 0.9218,
+    "weighted_f1_score": 0.921179426126734,
+    "correct_predictions": 9218,
+    "incorrect_predictions": 782
+}
