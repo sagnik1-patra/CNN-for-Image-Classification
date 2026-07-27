@@ -1,0 +1,11 @@
+class_index,class_name,training_count,validation_count,test_count
+0,airplane,4524,476,1000
+1,automobile,4513,487,1000
+2,bird,4473,527,1000
+3,cat,4477,523,1000
+4,deer,4514,486,1000
+5,dog,4496,504,1000
+6,frog,4515,485,1000
+7,horse,4491,509,1000
+8,ship,4497,503,1000
+9,truck,4500,500,1000

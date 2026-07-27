@@ -1,0 +1,10 @@
+{
+    "original_min": 0,
+    "original_max": 255,
+    "original_mean": 120.76824227430555,
+    "original_std": 64.14970708743755,
+    "normalized_min": 0.0,
+    "normalized_max": 1.0,
+    "normalized_mean": 0.4736009500953159,
+    "normalized_std": 0.2515674787742649
+}
