@@ -1,4 +1,4 @@
-# CNN for CIFAR-10 Image Classification using Deep Learning  
+# CNN for CIFAR-10 Image Classification using Deep Learning   
 
 
 ## Overview
