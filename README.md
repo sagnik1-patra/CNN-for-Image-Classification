@@ -1,7 +1,7 @@
 # CNN for CIFAR-10 Image Classification using Deep Learning   
 
 
-## Overview
+## Overview 
 
 This project implements a complete **Convolutional Neural Network (CNN)** pipeline for image classification using the **CIFAR-10** dataset. The system is built using **TensorFlow/Keras** and demonstrates the complete deep learning workflow, including data preprocessing, augmentation, CNN model development, transfer learning, model evaluation, visualization, and performance analysis.
 
